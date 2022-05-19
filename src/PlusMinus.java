@@ -10,6 +10,16 @@
  * 0.500000
  * 0.333333
  * 0.166667
+ * 
+ * EXAMPLE
+ * arr = [1,1,0,-1,-1]
+ * There are n=5 elements, two positive, two negative, and one zero.
+ * Their rations are: 2/5 = 0.400000, 2/5 = 0.400000 and 1/5 = 0.200000
+ * Results are printed as:
+ *  0.400000
+ *  0.400000
+ *  0.200000
+ * 
 */
 
 package src;
