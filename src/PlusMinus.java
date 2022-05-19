@@ -2,6 +2,10 @@
  * Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero.
  * Print the decimal value of each fraction on a new line with 6 places after the decimal.
  * 
+ * SAMPLE INPUT:
+ * 6 (size of the array)
+ * -4 3 -9 0 4 1 (numbers present in the array)
+ * 
  * SAMPLE OUTPUT:
  * 0.500000
  * 0.333333
