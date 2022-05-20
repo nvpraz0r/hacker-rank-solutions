@@ -20,6 +20,23 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class SparseArray {
+
+    //In this use hashmap is O(m + n)
+    public static List<Integer> HashMapResult(List<String> strings, List<String> queries) {
+        Map<String, Integer> dic = new HashMap<String, Integer>();
+        for(String key: strings){ //O(n)
+            int temp = dic.getOrDefault(key,0);
+            dic.put(key, ++temp);
+        }
+        
+        List<Integer> sol = new ArrayList<Integer>();
+        for(String elem : queries)    //O(m)
+            sol.add(dic.getOrDefault(elem,0));
+        
+        return sol;
+    }
+
+    //Collections is O(n) - in this use it is O(n*m)
     public static List<Integer> CollectionResult(List<String> strings, List<String> queries) {
         List<Integer> sol = new ArrayList<>();
         
