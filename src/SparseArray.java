@@ -47,7 +47,7 @@ public class SparseArray {
         return sol;
     }
 
-    public static void Main(String[] args) throws IOException {
+    public static void Main() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
