@@ -39,7 +39,8 @@ public class LonelyInteger {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int n = Integer.parseInt(bufferedReader.readLine().trim());
+        //integer isn't called - when removed the code doesn't execute properly??
+        // int n = Integer.parseInt(bufferedReader.readLine().trim());
 
         List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
