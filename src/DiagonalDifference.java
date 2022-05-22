@@ -21,15 +21,15 @@
  * 
  * What the table looks like:
  * 
- *      columns
- * i   0   1   2
- *   +---+---+---+
- * 0 | 1 | 2 | 3 |
- *   +---+---+---+
- * 1 | 4 | 5 | 6 |  Rows
- *   +---+---+---+
- * 2 | 7 | 8 | 9 |
- *   +---+---+---+
+ *           columns
+ *      i   0   1   2
+ *        +---+---+---+
+ *      0 | 1 | 2 | 3 |
+ *        +---+---+---+
+ *      1 | 4 | 5 | 6 |  Rows
+ *        +---+---+---+
+ *      2 | 7 | 8 | 9 |
+ *        +---+---+---+
  * 
 */
 package src;
@@ -41,13 +41,36 @@ import static java.util.stream.Collectors.toList;
 
 public class DiagonalDifference {
     public static int Result(List<List<Integer>> arr){
+
+        //sum variables - used to accumulate and calculate the objective
         int diagTopToBot = 0, diagBotToTop = 0;
 
         for(int i = 0; i < arr.size(); i++){
+            /**
+             * since the target locations are at index intersections (0,0) ; (1,1); (2,2)
+             * we can fetch the number correlating to the index iteration
+             * which would looke like:
+             *                   i , i = x
+             *      -first loop: 0 , 0 = 1
+             *      -second    : 1 , 1 = 5
+             *      -third     : 2 , 2 = 9
+            */
             diagTopToBot += arr.get(i).get(i);
+            
+            /**
+             * if arr.size() = 3 and arrays start at 0
+             * 3 - 1 = 2   the target starting row thereby correcting the offset
+             * to progress "up" the table subtract the index from the array size correction
+             * which would look like:
+             *                 arr - i = x
+             *      -first loop: 2 - 0 = 2
+             *      -second    : 2 - 1 = 1
+             *      -third     : 2 - 2 = 0
+            */
             diagBotToTop += arr.get((arr.size() - 1) - i).get(i);
         }
         
+        //the return the absolute value of both sums
         return Math.abs(diagTopToBot - diagBotToTop);
     }
 
