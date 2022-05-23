@@ -58,7 +58,8 @@ public class DiagonalDifference {
             diagTopToBot += arr.get(i).get(i);
             
             /**
-             * if arr.size() = 3 and arrays start at 0
+             * if arr.size() = 3 and arrays start at 0 - setting the starting location at 
+             * arr.size() would send the pointer off the table this is corrected by subracting by 1
              * 3 - 1 = 2   the target starting row thereby correcting the offset
              * to progress "up" the table subtract the index from the array size correction
              * which would look like:
