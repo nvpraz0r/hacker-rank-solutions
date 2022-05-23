@@ -21,7 +21,7 @@ import java.io.*;
 import java.text.*;
 
 public class TimeConversion {
-    public static String Result(String s){
+    public static String convert(String s){
 
         DateFormat twelveHourFormat = new SimpleDateFormat("hh:mm:ssa");
         DateFormat twentyFourHourFormat = new SimpleDateFormat("HH:mm:ss");
@@ -33,13 +33,13 @@ public class TimeConversion {
         }
     }
 
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         String s = bufferedReader.readLine();
 
-        String result = TimeConversion.Result(s);
+        String result = TimeConversion.convert(s);
 
         bufferedWriter.write(result);
         bufferedWriter.newLine();

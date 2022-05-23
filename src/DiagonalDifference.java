@@ -40,7 +40,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.toList;
 
 public class DiagonalDifference {
-    public static int Result(List<List<Integer>> arr){
+    public static int calculate(List<List<Integer>> arr){
 
         //sum variables - used to accumulate and calculate the objective
         int diagTopToBot = 0, diagBotToTop = 0;
@@ -75,7 +75,7 @@ public class DiagonalDifference {
         return Math.abs(diagTopToBot - diagBotToTop);
     }
 
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
@@ -95,7 +95,7 @@ public class DiagonalDifference {
             }
         });
 
-        int result = DiagonalDifference.Result(arr);
+        int result = DiagonalDifference.calculate(arr);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

@@ -22,7 +22,7 @@ import static java.util.stream.Collectors.toList;
 public class SparseArray {
 
     //In this use hashmap is O(m + n)
-    public static List<Integer> HashMapResult(List<String> strings, List<String> queries) {
+    public static List<Integer> hashMapResult(List<String> strings, List<String> queries) {
         Map<String, Integer> dic = new HashMap<String, Integer>();
         for(String key: strings){ //O(n)
             int temp = dic.getOrDefault(key,0);
@@ -37,7 +37,7 @@ public class SparseArray {
     }
 
     //Collections is O(n) - in this use it is O(n*m)
-    public static List<Integer> CollectionResult(List<String> strings, List<String> queries) {
+    public static List<Integer> collectionResult(List<String> strings, List<String> queries) {
         List<Integer> sol = new ArrayList<>();
         
         for(int i = 0; i < strings.size(); i++){
@@ -47,7 +47,7 @@ public class SparseArray {
         return sol;
     }
 
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
@@ -74,7 +74,7 @@ public class SparseArray {
             .collect(toList());
 
         //Collection Result can change to HashMapResult
-        List<Integer> res = SparseArray.CollectionResult(strings, queries);
+        List<Integer> res = SparseArray.collectionResult(strings, queries);
 
         bufferedWriter.write(
             res.stream()

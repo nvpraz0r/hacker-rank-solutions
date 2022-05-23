@@ -25,7 +25,7 @@ import static java.util.stream.Collectors.toList;
 
 public class MiniMaxSum {
 
-    public static void Result(List<Integer> arr) {
+    public static void sort(List<Integer> arr) {
         //initialize variables
         //set max and min to the first integer in the array to guarantee a USEFUL variable
         //if min is set to 0 then the 'algorithm' will malfunction
@@ -47,14 +47,14 @@ public class MiniMaxSum {
         System.out.println((sum - max) + " " + (sum - min));
     }
 
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 
-        MiniMaxSum.Result(arr);
+        MiniMaxSum.sort(arr);
 
         bufferedReader.close();
     }

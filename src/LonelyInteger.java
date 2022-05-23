@@ -22,7 +22,7 @@ import static java.util.stream.Collectors.toList;
 
 public class LonelyInteger {
 
-    public static int Result(List<Integer> a) {
+    public static int calculate(List<Integer> a) {
         //instatiate sum
         int sum = 0;
         //loop through array
@@ -35,7 +35,7 @@ public class LonelyInteger {
         return sum;
     }
     
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
@@ -46,7 +46,7 @@ public class LonelyInteger {
             .map(Integer::parseInt)
             .collect(toList());
 
-        int result = LonelyInteger.Result(a);
+        int result = LonelyInteger.calculate(a);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();

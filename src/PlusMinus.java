@@ -31,7 +31,7 @@ import static java.util.stream.Collectors.toList;
 
 public class PlusMinus {
 
-    public static void Result(List<Integer> arr) {
+    public static void calculate(List<Integer> arr) {
         
         //initialize variables
         float positiveValue = 0, negativeValue = 0, zeroValue = 0;
@@ -54,7 +54,7 @@ public class PlusMinus {
         System.out.println(String.format("%.6f", zeroValue/arr.size()));        
     }
 
-    public static void Main() throws IOException {
+    public static void print() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         //integer isn't called - when removed the code doesn't execute properly??
@@ -64,7 +64,7 @@ public class PlusMinus {
             .map(Integer::parseInt)
             .collect(toList());
 
-        PlusMinus.Result(arr);
+        PlusMinus.calculate(arr);
 
         bufferedReader.close();
     }
