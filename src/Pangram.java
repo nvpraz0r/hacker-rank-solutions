@@ -15,5 +15,32 @@ package src;
 import java.io.*;
 
 public class Pangram {
-    
+
+    public static String sort(String s){
+        /**
+         * This one can be solved in one line
+         *      -convert all to lower
+         *      -replace the spaces
+         *      -convert to chars
+         *      -detect distinct characters
+         *      -count said characters
+         *      -if count is 26 return "pangram" if not return "not pangram"
+        */
+        return s.toLowerCase().replace(" ", "").chars().distinct().count() == 26 ? "pangram" : "not pangram";
+    }
+
+    public static void print() throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        String result = Pangram.sort(s);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
 }
