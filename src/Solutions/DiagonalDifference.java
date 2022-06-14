@@ -32,7 +32,7 @@
  *        +---+---+---+
  * 
 */
-package src;
+package src.Solutions;
 
 import java.io.*;
 import java.util.*;

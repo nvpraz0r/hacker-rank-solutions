@@ -16,7 +16,7 @@
  * 10 14
 */
 
-package src;
+package src.Solutions;
 
 import java.io.*;
 import java.util.*;

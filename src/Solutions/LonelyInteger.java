@@ -12,7 +12,7 @@
  * the unique element is 4
 */
 
-package src;
+package src.Solutions;
 
 import java.io.*;
 import java.util.*;
